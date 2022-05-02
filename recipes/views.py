@@ -46,4 +46,18 @@ def update_view(request, id):
     context["form"] = form
     return render(request, "update_view.html", context)
 
+def delete_view(request, id):
+    context = {}
+
+    obj = get_object_or_404(recipesModel, id = id)
+    
+
+    if request.method == "POST":
+        obj.delete()
+        return HttpResponseRedirect("/")
+
+    
+    return render(request, "delete_view.html", context)
+
+
 
