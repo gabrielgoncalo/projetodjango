@@ -1,6 +1,6 @@
 from django.urls import path
 
-from recipes.views import create_view, list_view, detail_view, update_view
+from recipes.views import create_view, delete_view, list_view, detail_view, update_view
 
 urlpatterns = [
     #   path('admin/', admin.site.urls),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('list/', list_view),
     path('<id>/', detail_view),
     path('<id>/'+'update/', update_view),
+    path('<id>/delete', delete_view),
 ]
